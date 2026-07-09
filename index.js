@@ -5,9 +5,11 @@ require('dotenv').config()
 const app = express()
 
 
-const cors = require('cors')
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: [
+        'http://localhost:5173',
+        'https://office-management-system-kappa.vercel.app'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'authorization']
 }))
