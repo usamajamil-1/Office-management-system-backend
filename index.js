@@ -22,7 +22,9 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('MongoDB connection error:', err.message));
 
 
-
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 
 
 const authRoutes = require('./routes/auth')
