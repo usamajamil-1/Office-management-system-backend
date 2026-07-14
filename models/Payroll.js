@@ -32,6 +32,7 @@ const payrollSchema = new mongoose.Schema({
 // netSalary hamesha basicSalary - deduction se calculate hoga
 payrollSchema.pre('save', function (next) {
     this.netSalary = this.basicSalary - this.deduction
+    next()
     
 })
 
