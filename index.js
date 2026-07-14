@@ -53,6 +53,8 @@ app.use('/api/reports', require('./routes/reportsRoutes'))
 
 app.use('/api/attendance', require('./routes/attendanceRoutes'))
 
+app.use('/api/announcement', require('./routes/announcementRoutes'))
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server chal raha hai port ${process.env.PORT} par!`)
