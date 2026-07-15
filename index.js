@@ -1,10 +1,10 @@
 const express = require('express')
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose')
 require('dotenv').config()
 
 const app = express()
-const cors = require('cors');
-
+const cors = require('cors')
+const connectDB = require('./config/db')
 
 app.use(cors({
     origin: [
@@ -15,47 +15,35 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'authorization']
 }))
 
-app.use(express.json()) 
+app.use(express.json())
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch((err) => console.error('MongoDB connection error:', err.message));
-
+connectDB()
 
 app.get('/', (req, res) => {
-  res.send('Backend is running');
-});
-
+  res.send('Backend is running')
+})
 
 const authRoutes = require('./routes/auth')
 app.use('/api/auth', authRoutes)
 
 const employeeRoutes = require('./routes/employee')
-app.use('/api/employees', employeeRoutes) 
+app.use('/api/employees', employeeRoutes)
 
 const leaveRoutes = require('./routes/leave')
-app.use('/api/leave',leaveRoutes)
+app.use('/api/leave', leaveRoutes)
 
 const taskRoutes = require('./routes/task')
-app.use('/api/task',taskRoutes)
+app.use('/api/task', taskRoutes)
 
 app.use('/api/expense', require('./routes/expenseRoutes'))
-
 app.use('/api/inventory', require('./routes/inventoryRoutes'))
-
 app.use('/api/payroll', require('./routes/payrollRoutes'))
-
 app.use('/api/profile', require('./routes/profileRoutes'))
-
 app.use('/api/recruitment', require('./routes/recruitmentRoutes'))
-
 app.use('/api/reports', require('./routes/reportsRoutes'))
-
 app.use('/api/attendance', require('./routes/attendanceRoutes'))
-
 app.use('/api/announcement', require('./routes/announcementRoutes'))
 
-
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT, () => {
     console.log(`Server chal raha hai port ${process.env.PORT} par!`)
 })
