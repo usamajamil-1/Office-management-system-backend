@@ -3,7 +3,7 @@ const Task = require('../models/Task')
 const Expense = require('../models/Expense')
 const Inventory = require('../models/Inventory')
 const Leave = require('../models/Leave')
-const Attendance = require('../models/Attendance')
+const Attendance = require('../modules/attendance/attendance.model')
 
 const getSummary = async (req, res) => {
     try {
