@@ -32,8 +32,9 @@ app.use('/api/employees', employeeRoutes)
 const leaveRoutes = require('./modules/leave/leave.routes')
 app.use('/api/leave', leaveRoutes)
 
-const taskRoutes = require('./routes/task')
+const taskRoutes = require('./modules/task/task.routes')
 app.use('/api/task', taskRoutes)
+
 
 app.use('/api/expense', require('./routes/expenseRoutes'))
 app.use('/api/inventory', require('./routes/inventoryRoutes'))
