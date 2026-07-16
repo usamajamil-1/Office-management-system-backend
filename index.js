@@ -41,7 +41,10 @@ app.use('/api/payroll', require('./routes/payrollRoutes'))
 app.use('/api/profile', require('./routes/profileRoutes'))
 app.use('/api/recruitment', require('./routes/recruitmentRoutes'))
 app.use('/api/reports', require('./routes/reportsRoutes'))
-app.use('/api/attendance', require('./routes/attendanceRoutes'))
+
+const attendanceRoutes = require('./modules/attendance/attendance.routes')
+app.use('/api/attendance', attendanceRoutes)
+
 app.use('/api/announcement', require('./routes/announcementRoutes'))
 
 app.listen(process.env.PORT, () => {

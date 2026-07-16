@@ -1,8 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
-const { markAttendance, readTodayAttendance, readAllAttendance } = require('../controllers/AttendanceController')
+const {
+  markAttendance,
+  readTodayAttendance,
+  readAllAttendance,
+} = require('./attendance.controller')
 
 router.post('/', protect, markAttendance)
 router.get('/today', protect, readTodayAttendance)
