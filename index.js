@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth')
 app.use('/api/auth', authRoutes)
 
-const employeeRoutes = require('./routes/employee')
+const employeeRoutes = require('./modules/employees/employee.routes')
 app.use('/api/employees', employeeRoutes)
 
 const leaveRoutes = require('./routes/leave')

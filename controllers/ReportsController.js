@@ -1,4 +1,4 @@
-const Employee = require('../models/Employee')
+const Employee = require('../modules/employees/employee.model')
 const Task = require('../models/Task')
 const Expense = require('../models/Expense')
 const Inventory = require('../models/Inventory')

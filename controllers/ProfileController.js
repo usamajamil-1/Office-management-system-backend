@@ -1,4 +1,4 @@
-const Employee = require('../models/Employee')
+const Employee = require('../modules/employees/employee.model')
 const bcrypt = require('bcryptjs')
 
 // Apna profile dekhna
