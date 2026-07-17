@@ -48,7 +48,10 @@ const payrollRoutes = require('./modules/payroll/payroll.routes')
 app.use('/api/payroll', payrollRoutes)
 
 
-app.use('/api/profile', require('./routes/profileRoutes'))
+const profileRoutes = require('./modules/profile/profile.routes')
+app.use('/api/profile', profileRoutes)
+
+
 app.use('/api/recruitment', require('./routes/recruitmentRoutes'))
 app.use('/api/reports', require('./routes/reportsRoutes'))
 

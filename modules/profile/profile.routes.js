@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
-const { getProfile, updateProfile, changePassword } = require('../controllers/ProfileController')
+const { getProfile, updateProfile, changePassword } = require('./profile.controller')
 
 router.get('/', protect, getProfile)
 router.put('/', protect, updateProfile)
