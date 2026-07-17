@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
-const { createAnnouncement, readAnnouncement, deleteAnnouncement, updateAnnouncement } = require('../controllers/AnnouncementController')
+const { createAnnouncement, readAnnouncement, deleteAnnouncement, updateAnnouncement } = require('./announcement.controller')
 
 router.post('/', protect, createAnnouncement)
 router.get('/', protect, readAnnouncement)

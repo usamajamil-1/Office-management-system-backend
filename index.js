@@ -58,7 +58,10 @@ app.use('/api/reports', require('./routes/reportsRoutes'))
 const attendanceRoutes = require('./modules/attendance/attendance.routes')
 app.use('/api/attendance', attendanceRoutes)
 
-app.use('/api/announcement', require('./routes/announcementRoutes'))
+
+
+const announcementRoutes = require('./modules/announcement/announcement.routes')
+app.use('/api/announcement', announcementRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server chal raha hai port ${process.env.PORT} par!`)

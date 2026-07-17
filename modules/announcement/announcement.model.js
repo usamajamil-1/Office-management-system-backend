@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const announcementSchema = new mongoose.Schema({
-
     title: {
         type: String,
         required: true
@@ -20,7 +19,6 @@ const announcementSchema = new mongoose.Schema({
         enum: ['info', 'warning', 'important'],
         default: 'info'
     },
-
 }, { timestamps: true })
 
 const Announcement = mongoose.model('Announcement', announcementSchema)
