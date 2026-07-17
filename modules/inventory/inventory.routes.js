@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
-const { createItem, readItem, deleteItem, updateItem } = require('../controllers/InventoryController')
+const { createItem, readItem, deleteItem, updateItem } = require('./inventory.controller')
 
 router.post('/', protect, createItem)
 router.get('/', protect, readItem)
