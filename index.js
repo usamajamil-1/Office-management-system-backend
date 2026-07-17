@@ -44,7 +44,10 @@ const inventoryRoutes = require('./modules/inventory/inventory.routes')
 app.use('/api/inventory', inventoryRoutes)
 
 
-app.use('/api/payroll', require('./routes/payrollRoutes'))
+const payrollRoutes = require('./modules/payroll/payroll.routes')
+app.use('/api/payroll', payrollRoutes)
+
+
 app.use('/api/profile', require('./routes/profileRoutes'))
 app.use('/api/recruitment', require('./routes/recruitmentRoutes'))
 app.use('/api/reports', require('./routes/reportsRoutes'))

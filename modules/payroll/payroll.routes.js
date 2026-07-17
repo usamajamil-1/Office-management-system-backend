@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
-const { createPayroll, readPayroll, deletePayroll, updatePayroll } = require('../controllers/PayrollController')
+const { createPayroll, readPayroll, deletePayroll, updatePayroll } = require('./payroll.controller')
 
 router.post('/', protect, createPayroll)
 router.get('/', protect, readPayroll)

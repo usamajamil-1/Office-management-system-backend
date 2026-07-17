@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 const payrollSchema = new mongoose.Schema({
-    name: {
-        type: String,
+    employee: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee',
         required: true
     },
     department: {
@@ -29,11 +30,9 @@ const payrollSchema = new mongoose.Schema({
     },
 }, { timestamps: true })
 
-// netSalary hamesha basicSalary - deduction se calculate hoga
 payrollSchema.pre('save', function (next) {
     this.netSalary = this.basicSalary - this.deduction
     next()
-    
 })
 
 const Payroll = mongoose.model('Payroll', payrollSchema)
