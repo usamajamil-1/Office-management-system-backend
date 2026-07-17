@@ -52,7 +52,10 @@ const profileRoutes = require('./modules/profile/profile.routes')
 app.use('/api/profile', profileRoutes)
 
 
-app.use('/api/recruitment', require('./routes/recruitmentRoutes'))
+const recruitmentRoutes = require('./modules/recruitment/recruitment.routes')
+app.use('/api/recruitment', recruitmentRoutes)
+
+
 app.use('/api/reports', require('./routes/reportsRoutes'))
 
 const attendanceRoutes = require('./modules/attendance/attendance.routes')

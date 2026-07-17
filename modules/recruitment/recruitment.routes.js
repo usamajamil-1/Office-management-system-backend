@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const protect = require('../middleware/auth')
+const protect = require('../../middleware/auth')
 
 const {
     createApplication, readApplications, updateApplication, deleteApplication,
     createInterview, readInterviews, deleteInterview,
     createVacancy, readVacancies, updateVacancy, deleteVacancy
-} = require('../controllers/RecruitmentController')
+} = require('./recruitment.controller')
 
 router.post('/applications', protect, createApplication)
 router.get('/applications', protect, readApplications)
