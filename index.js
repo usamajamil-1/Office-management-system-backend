@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   res.send('Backend is running')
 })
 
-const authRoutes = require('./routes/auth')
+const authRoutes = require('./modules/auth/auth.routes')
 app.use('/api/auth', authRoutes)
 
 const employeeRoutes = require('./modules/employees/employee.routes')
