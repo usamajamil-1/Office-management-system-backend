@@ -56,7 +56,8 @@ const recruitmentRoutes = require('./modules/recruitment/recruitment.routes')
 app.use('/api/recruitment', recruitmentRoutes)
 
 
-app.use('/api/reports', require('./routes/reportsRoutes'))
+const reportsRoutes = require('./modules/reports/reports.routes')
+app.use('/api/reports', reportsRoutes)
 
 const attendanceRoutes = require('./modules/attendance/attendance.routes')
 app.use('/api/attendance', attendanceRoutes)
