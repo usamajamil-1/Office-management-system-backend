@@ -12,6 +12,6 @@ const employeeSchema = Joi.object({
   address : Joi.string().required(),
   cnic : Joi.string().required(),
 
-})
+}).options({ stripUnknown: true })
 
 module.exports = employeeSchema

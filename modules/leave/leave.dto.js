@@ -6,6 +6,6 @@ const leaveSchema = Joi.object({
   fromDate: Joi.date().required(),
   toDate: Joi.date().min(Joi.ref('fromDate')).required(),
   status: Joi.string().valid('pending', 'approved', 'rejected'),
-})
+}).options({ stripUnknown: true })
 
 module.exports = leaveSchema

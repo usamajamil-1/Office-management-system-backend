@@ -5,6 +5,6 @@ const taskSchema = Joi.object({
   assignedTo: Joi.string().hex().length(24).required(),
   dueDate: Joi.date().required(),
   status: Joi.string().valid('pending', 'inProgress', 'completed'),
-})
+}).options({ stripUnknown: true })
 
 module.exports = taskSchema

@@ -5,6 +5,6 @@ const announcementSchema = Joi.object({
   message: Joi.string().required(),
   date: Joi.date().required(),
   type: Joi.string().valid('info', 'warning', 'important'),
-})
+}).options({ stripUnknown: true })
 
 module.exports = announcementSchema

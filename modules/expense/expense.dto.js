@@ -5,6 +5,6 @@ const expenseSchema = Joi.object({
   amount: Joi.number().positive().required(),
   date: Joi.date().required(),
   status: Joi.string().valid('paid', 'unPaid'),
-})
+}).options({ stripUnknown: true })
 
 module.exports = expenseSchema

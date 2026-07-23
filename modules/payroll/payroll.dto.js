@@ -6,6 +6,6 @@ const payrollSchema = Joi.object({
   basicSalary: Joi.number().positive().required(),
   deduction: Joi.number().min(0),
   status: Joi.string().valid('Paid', 'UnPaid'),
-})
+}).options({ stripUnknown: true })
 
 module.exports = payrollSchema
